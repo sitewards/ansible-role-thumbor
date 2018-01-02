@@ -1,1 +1,6 @@
 ---
+- name: "Ensure thumbor application is present"
+  pip:
+    executable: "pip2"
+    name: "thumbor"
+    state: "present"

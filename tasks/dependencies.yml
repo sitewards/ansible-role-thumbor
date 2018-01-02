@@ -1,1 +1,10 @@
 ---
+- name: "Ensure required dependencies are present"
+  package:
+    name: "{{ item }}"
+    state: "present"
+  with_items:
+    # python is python2
+    - "python"
+    - "python-pip"
+    - "libcurl4-openssl-dev"
