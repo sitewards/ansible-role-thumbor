@@ -8,6 +8,11 @@ It installs the Thumbor image server
 - Does not make that server available publicly, but rather only on localhost. Exposing the server should be handled
   by another role.
 
+## Justification
+
+At the time of writing, there did not appear to be a role that used systemd to manage it's init, nor the more common
+primitives associated with running the daemon.
+
 ## Installation
 
 There are two ways to install this role:

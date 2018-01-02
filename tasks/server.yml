@@ -4,3 +4,18 @@
     executable: "pip2"
     name: "thumbor"
     state: "present"
+
+- name: "Install the systemd configuration files"
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    owner: "root"
+    group: "root"
+    mode: "u=rw,g=r,o=r"
+  with_items:
+    - src: "etc/default/thumbor.j2"
+      dest: "/etc/default/thumbor"
+    - src: "etc/systemd/system/thumbor.service.j2"
+      dest: "/etc/systemd/system/thumbor.service"
+  notify:
+    - "restart thumbor"

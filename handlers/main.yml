@@ -1,0 +1,7 @@
+---
+- name: "restart thumbor"
+  systemd:
+    name: "thumbor"
+    state: "restarted"
+    daemon_reload: "yes"
+
