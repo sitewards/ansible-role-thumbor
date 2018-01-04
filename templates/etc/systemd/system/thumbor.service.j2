@@ -1,0 +1,16 @@
+[Unit]
+Description=The thumbor image server
+Documentation=https://github.com/sitewards/ansible-role-thumbor
+
+[Service]
+EnvironmentFile=/etc/default/thumbor
+
+# Start the service, bound to localhost. It will be exposed by another service, such as NGINX or stunnel.
+ExecStart=/usr/local/bin/thumbor \
+    --port "${THUMBOR_PORT}" \
+    --ip "${THUMBOR_IP}"
+
+[Install]
+
+# Boot it after the network is up and running
+WantedBy=network-online.target
