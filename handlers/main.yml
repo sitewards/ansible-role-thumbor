@@ -3,5 +3,6 @@
   systemd:
     name: "thumbor"
     state: "restarted"
+    enabled: "yes"
     daemon_reload: "yes"
 
