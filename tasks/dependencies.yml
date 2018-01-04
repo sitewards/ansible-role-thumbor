@@ -7,4 +7,5 @@
     # python is python2
     - "python"
     - "python-pip"
+    - "libssl-dev"
     - "libcurl4-openssl-dev"
