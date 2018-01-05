@@ -15,3 +15,11 @@
 ## (Optional)
 # thumbor_optional_dependencies: []
 
+## A list of optimizers that will be applied to the generated thumbor images.
+## See https://github.com/thumbor/thumbor/wiki/Optimizers
+##
+## Note: Use the optional dependencies variable to include any programs (such as jpegtran) required to implement this
+## change.
+## (Optional)
+# thumbor_optimizers: []
+
