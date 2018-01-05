@@ -452,8 +452,11 @@
 ## Defaults to: #    [
 #    ]
 
-#OPTIMIZERS = #    [
-#    ]
+{% if thumbor_optimizers is defined %}
+OPTIMIZERS = [ {% for optimizer in thumbor_optimizers %}
+    '{{ optimizer }}'
+{% endfor %}]
+{% endif %}
 
 
 ## Path for the jpegtran binary
