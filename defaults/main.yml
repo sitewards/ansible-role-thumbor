@@ -6,3 +6,12 @@
 ## The IP that thumbor is bound to
 ## (Optional)
 # thumbor_ip: "127.0.0.1"
+
+## The path to the thumbor configuration file stored on the server
+## (Optional)
+# thumbor_conf_path: "/etc/thumbor/thumbor.conf"
+
+## Any additional system packages that thumbor has been configured to use (for example, jpegtran)
+## (Optional)
+# thumbor_optional_dependencies: []
+

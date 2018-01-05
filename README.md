@@ -7,6 +7,8 @@ It installs the Thumbor image server
 
 - Does not make that server available publicly, but rather only on localhost. Exposing the server should be handled
   by another role.
+- While the thumbor configuration file exists, it has not been hugely templated -- only as required by the current
+  implementation. Contributions for further extension are welcome.
 
 ## Justification
 

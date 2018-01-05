@@ -17,17 +17,29 @@
     name: "thumbor"
     state: "present"
 
-- name: "Install the systemd configuration files"
+- name: "Enforce the thumbor configuration directory"
+  file:
+    owner: "thumbor"
+    group: "thumbor"
+    path: "/etc/thumbor/"
+    state: "directory"
+    mode: "0755"
+
+- name: "Enforce the configuration files"
   template:
     src: "{{ item.src }}"
     dest: "{{ item.dest }}"
-    owner: "root"
-    group: "root"
+    owner: "{{ item.owner | default('root') }}"
+    group: "{{ item.group | default('root') }}"
     mode: "u=rw,g=r,o=r"
   with_items:
     - src: "etc/default/thumbor.j2"
       dest: "/etc/default/thumbor"
     - src: "etc/systemd/system/thumbor.service.j2"
       dest: "/etc/systemd/system/thumbor.service"
+    - src: "etc/thumbor/thumbor.conf.j2"
+      dest: "/etc/thumbor/thumbor.conf"
+      owner: "thumbor"
+      group: "thumbor"
   notify:
     - "restart thumbor"

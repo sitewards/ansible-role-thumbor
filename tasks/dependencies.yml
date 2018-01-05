@@ -9,3 +9,9 @@
     - "python-pip"
     - "libssl-dev"
     - "libcurl4-openssl-dev"
+
+- name: "Ensure optional dependencies are present"
+  package:
+    name: "{{ item }}"
+    state: "present"
+  with_items: "{{ thumbor_optional_dependencies | default([]) }}"
