@@ -1,4 +1,16 @@
 ---
+- name: "Ensure the thumbor group is present"
+  group:
+    name: "thumbor"
+    system: "yes"
+
+- name: "Ensure the thumbor user is present"
+  user:
+    name: "thumbor"
+    shell: "/bin/false"
+    group: "thumbor"
+    system: "yes"
+
 - name: "Ensure thumbor application is present"
   pip:
     executable: "pip2"
