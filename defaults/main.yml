@@ -23,3 +23,8 @@
 ## (Optional)
 # thumbor_optimizers: []
 
+## Whether or not to to automatically return webp images, based on whether the browser supports it.
+## See https://github.com/thumbor/thumbor/wiki/Configuration#auto_webp
+##
+## (Optional)
+# thumbor_auto_webp: "False"
