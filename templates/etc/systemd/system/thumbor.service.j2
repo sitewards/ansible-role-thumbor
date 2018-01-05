@@ -3,6 +3,9 @@ Description=The thumbor image server
 Documentation=https://github.com/sitewards/ansible-role-thumbor
 
 [Service]
+User=thumbor
+Group=thumbor
+
 EnvironmentFile=/etc/default/thumbor
 
 # Start the service, bound to localhost. It will be exposed by another service, such as NGINX or stunnel.
