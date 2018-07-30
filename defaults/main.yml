@@ -28,3 +28,6 @@
 ##
 ## (Optional)
 # thumbor_auto_webp: "False"
+
+## Whether specific version of thumbor should be installed (defaults to latest if not set)
+# thumbor_version: "6.5.1"

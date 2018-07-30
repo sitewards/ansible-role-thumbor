@@ -11,11 +11,20 @@
     group: "thumbor"
     system: "yes"
 
-- name: "Ensure thumbor application is present"
+- name: "Ensure latest version of thumbor application is present"
+  pip:
+    executable: "pip2"
+    name: "thumbor"
+    state: "latest"
+  when: (thumbor_version is undefined)
+
+- name: "Ensure specific version of thumbor application is present"
   pip:
     executable: "pip2"
     name: "thumbor"
     state: "present"
+    version: "{{ thumbor_version }}"
+  when: (thumbor_version is defined)
 
 - name: "Enforce the thumbor configuration directory"
   file:
